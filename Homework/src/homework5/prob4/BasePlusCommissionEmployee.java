@@ -18,5 +18,4 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
 	public void setBaseSalary(double baseSalary) {
 		this.baseSalary = baseSalary;
 	}
-	
 }

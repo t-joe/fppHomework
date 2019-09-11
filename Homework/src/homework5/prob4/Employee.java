@@ -28,4 +28,9 @@ public abstract class Employee{
 	public String getSsn() {
 		return ssn;
 	}
+	@Override
+	public String toString()
+	{
+		return this.getClass().getSimpleName() + "\n\tFirst name:  "  + this.firstName + "\n\tLast name: " + this.lastName;
+	}
 }

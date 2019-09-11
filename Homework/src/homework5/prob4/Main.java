@@ -23,7 +23,7 @@ public class Main {
 		for(Employee e: emp)
 		{
 			totalSalary += e.getPayment();
-			System.out.println(e.getClass().getSimpleName() + ": "+ e.getSsn());
+			System.out.println(e.toString());
 		}
 				
 		System.out.println("Total salary: "+totalSalary );
