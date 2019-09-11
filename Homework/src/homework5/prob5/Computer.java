@@ -1,5 +1,7 @@
 package homework5.prob5;
 
+import java.util.Objects;
+
 public class Computer implements Cloneable{
 	private String manufacturer;
 	private String processor;
