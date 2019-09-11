@@ -11,35 +11,42 @@ import RandomNumber.RandomNumbers;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] arr = {"horse", "dog", "cat", "horse","dog", "horse", "horse", "horse", "horse", "horse"};
-		String[] result = removeDups(arr);
-		System.out.println(Arrays.toString(result));
+		removeDup(new String[] {"horse", "dog", "cat", "hors","dog", "hors", "hors", "hors", "hors", "hors"});
+
 	}
-	
-	public static String[] removeDups(String[] arr) {
-		if(arr==null  || arr.length == 0 || arr.length == 1){ 
-			return arr;
-		}
-		else {
-			int len = arr.length;
-			StringBuilder distinctArray = new StringBuilder(arr[0]);
-			for(int i = 1; i < len; ++i) {
-				boolean flag = false;
-				for(int j = 0; j < i; ++j) {
-					if(arr[j].equals(arr[i])) {
-						flag = true;
-						break;
-					}
-				}
-				if(!flag) {
-					distinctArray.append("," + arr[i]);
+	static void removeDup(String input[]) {
+		int x=input.length;
+		String temp[]=new String[x];
+		int dup=0;
+		for(int i=0;i<x;i++) 
+		{
+			boolean isdup=false;
+			for(int j=0;j<x;j++)
+			{
+				if(input[i]==temp[j]) 
+				{
+					dup++;
+					isdup=true;
+					break;
 				}
 			}
-			String[] noDupsArray = distinctArray.toString().split(",");
-			return noDupsArray;
+			
+			if(isdup==false) 
+			{
+			temp[i]=input[i];
+			}
 			
 		}
 		
-
+		int count=x-dup;
+		String distinct[]=new String[count];
+		
+		for(int i=0,j=0;i<count;i++,j++) 
+		{
+			if(temp[i]==null) j++;
+			distinct[i]=temp[j];
+			
+		}
+		System.out.println(Arrays.toString(distinct));
 	}
 }
