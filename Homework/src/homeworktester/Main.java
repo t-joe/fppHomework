@@ -1,52 +1,41 @@
 package homeworktester;
 
-import java.awt.AWTException;
-import java.awt.Robot;
 import java.util.Arrays;
-import java.util.Scanner;
-
-import Homework3.prob1.Address;
-import Homework3.prob1.Customer;
-import RandomNumber.RandomNumbers;
 
 public class Main {
 	public static void main(String[] args) {
-		removeDup(new String[] {"horse", "dog", "cat", "hors","dog", "hors", "hors", "hors", "hors", "hors"});
-
+		// TODO code application logic here
+		String name = "Komakech";
+		//System.out.println(min(name));
+		 System.out.println(min("komakech"));
 	}
-	static void removeDup(String input[]) {
-		int x=input.length;
-		String temp[]=new String[x];
-		int dup=0;
-		for(int i=0;i<x;i++) 
-		{
-			boolean isdup=false;
-			for(int j=0;j<x;j++)
-			{
-				if(input[i]==temp[j]) 
-				{
-					dup++;
-					isdup=true;
-					break;
-				}
+
+	public static char min(String qwe) {
+
+		if (qwe.isEmpty())
+			return 0;
+
+		if (qwe.length() == 1)
+			return qwe.charAt(0);
+
+		else {
+
+			char first = qwe.charAt(0);
+			char secondx = qwe.charAt(1);
+
+			qwe = qwe.substring(1);
+
+			if (first > secondx) {
+
+				first = secondx;
 			}
-			
-			if(isdup==false) 
-			{
-			temp[i]=input[i];
+
+			else {
+				qwe = first + qwe.substring(1);
+				// System.out.println(qwe);
 			}
-			
+			return min(qwe);
+
 		}
-		
-		int count=x-dup;
-		String distinct[]=new String[count];
-		
-		for(int i=0,j=0;i<count;i++,j++) 
-		{
-			if(temp[i]==null) j++;
-			distinct[i]=temp[j];
-			
-		}
-		System.out.println(Arrays.toString(distinct));
 	}
 }

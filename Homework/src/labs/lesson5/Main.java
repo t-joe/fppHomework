@@ -3,7 +3,8 @@ package labs.lesson5;
 public class Main {
 
 	public static void main(String[] args) {
-		reverse("fpp - class");
+		char c = 'a';
+		System.out.println((int)'a');
 	}
 	
 	static void reverse(String str)
